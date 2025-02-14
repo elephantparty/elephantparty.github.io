@@ -14,22 +14,52 @@
         h1 {
             color: #ff6f61;
         }
+        #hiddenText {
+            display: none;
+            margin-top: 20px;
+            color: #333;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <h1>“I wonder what Piglet is doing," thought Pooh.
-"I wish I were there to be doing it, too.”</h1>
+    "I wish I were there to be doing it, too.”</h1>
     <p>
+        “Ditch your day of do nothing, Christopher Robin” declared Owl from overhead. “We are having a party!” <br />
+        Animals gathered round the table of tea and juice. They fitted themselves with hats made specially by Roo. “Cake, cakes, and cakes” mumbled Rabbit, setting trays of all manner of vegetable cake about. “And oh!” He said, darting away and back with Kanga’s honey cakes for Pooh, Roo, Christopher Robin, and you. Tigger, all abounce and aboing, apologizes for knocking your tea to the ground. <br />
+        “I think we’ve forgotten someone, Pooh,” Eeyore’s voice emerged from under the table. “Ah emnfcp!” said Pooh, mouth full of several cakes. <br />
+        “What a mystery, and more mysterious still. I can’t remember what we are celebrating! Would you help me puzzle this out, Aoife?” Inquired Owl. <br />
+    </p>
 
-“Ditch your day of do nothing, Christopher Robin” d<b>e<b>clared owl from overhead. “We are having a party!” <br />
+    <!-- Text Entry Box -->
+    <label for="inputBox">Missing Friend, Occasion:</label><br>
+    <input type="text" id="inputBox" placeholder="Type here..." oninput="checkInput()">
+    <p id="responseMessage" style="color: red;"></p>
 
-Animals gathered round the table of tea and <b>j<b>uice. They fitted themselves with hats made specially by Roo. “Cake<b>s<b>, cakes, and cakes” mumbled rabbit setting trays of all manner of veggetable cake about. “And oh!” He said darting away and back with Kanga’s honey cakes for Pooh, Roo, Christofer Robin, and you. Tigger, all abounce and aboing, apologi<b>z<b>es for knocking your tea to the ground. <br /> 
+    <!-- Hidden Paragraph -->
+    <div id="hiddenText">
+        <p>You did it! Load Note Here.</p>
+    </div>
 
-“I think we’ve forgotten someone Pooh” Eeyore’s voice emerged from under the <b>t<b>able. “Ah emnfcp!” said Pooh, <b>m<b>outh full of several cakes. <br />
-
-“What a mystery, and more mysterious still. I can’t remember what we are <b>c<b>elebrating! Would you help me puzzle this out, Aoife?” In<b>q<b>uired Owl. <br />
-
-</p>
     <a href="../index.html">Go Back to Home</a>
+
+    <script>
+        const correctString = "gopher, lovebugs"; // The correct string to trigger the reveal
+        const hiddenText = document.getElementById("hiddenText");
+        const responseMessage = document.getElementById("responseMessage");
+
+        function checkInput() {
+            const userInput = document.getElementById("inputBox").value;
+
+            if (userInput.toLowerCase() === correctString.toLowerCase()) {
+                hiddenText.style.display = "block"; // Reveal the hidden text
+                responseMessage.textContent = ""; // Clear any previous error messages
+            } else {
+                hiddenText.style.display = "none"; // Hide the text if input is incorrect
+                responseMessage.textContent = "Try again!"; // Show error message
+            }
+        }
+    </script>
 </body>
 </html>
