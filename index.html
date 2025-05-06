@@ -55,11 +55,22 @@
             color: red;
             animation: bounce 0.5s infinite;
         }
+        #grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20vw;
+    }    
     </style>
 </head>
 <body>
     <h1>Elephant Party</h1>
-    <p class="animated-text">Valentines Edition</p>
+    <p id="grad1" class="animated-text">Birthday Edition!</p>
+
     
     <div class="elephant">
         <pre>
