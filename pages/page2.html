@@ -14,11 +14,73 @@
         h1 {
             color: #ff6f61;
         }
+    p {
+      word-wrap: break-word;
+      white-space: normal;
+      margin-bottom: 1em;
+    }
     </style>
 </head>
 <body>
-    <h1>Welcome to Page 2</h1>
-    <p>...</p>
-     <a href="../index.html">Go Back to Home</a>
+    <h1>Fastitocalon</h1>
+      <p>Hear my story.</p>
+
+  <p><em>
+    Algae broiled in the low sun and heat waves shimmered in the grey pond. Soaring through the spring dusk and past the scummy bank, I see
+    a turtle spread out on a sizeable protruding rock. Her beak is fixed in a satisfied grin as she bakes in her shell. The pleasant
+    scene causes me to switch hosts, falling into a water hyacinth. Another turtle surfaces. He clambers up the rock and his eyes bulge
+    as he appears to hold back a cough. Miraculously, the new arrival begins to hum! He rocks back and forth on his legs, awaking the
+    original occupant who peers at him with a single eye. A muted crack echoes across the water, and then another as his shell splits
+    and splits again. Toes stretch, arms distend, and tiny eyes inflate and shake with horror. When the process is done, a man,
+    completely hairless and nude, is sprawled, butt-up, across the rock. The fingers of his right hand stir the algae ponderously.
+    Breaking from his trance, he addresses the lady turtle, “Long time no see, Arlet.” The little turtle, apparently called Arlet,
+    ambles over to the naked guy, and appears to consider for a moment before extending her neck and biting him on the chin.
+    “ACK!” he exclaims, retreating to the edge of the rock and gathering the four pieces of shell he'd left behind. Arlet continues
+    her advance on the guy as he presses the pieces of shell along the cracked edges, and flattens the whole thing as if made of putty.
+    The pieces fuse and he hurriedly places his work atop his shiny head. Arlet stops as he rounds the edges of the shell to observe
+    the contour of his cranium. The two creatures gurgle at each other.
+  </em></p>
+
+  <p>
+    Lucky for you, dear reader, I inferred a great deal of their conversation from the body-language. Something about a ritual, or
+    was it a seance? What's the difference, actually? Anyhow, they were big readers. The Brothers Karamazov—or actually no, not quite…
+    And Arlet was incredibly grouchy. I can't remember the password. I need a little help jogging my memory as I'm right at the door!
+  </p>
+
+    <!-- Text Entry Box -->
+    <label for="inputBox">Password if you please:</label><br>
+    <input type="text" id="inputBox" placeholder="Type here..." oninput="checkInput()">
+    <p id="responseMessage" style="color: red;"></p>
+
+    <!-- Hidden Paragraph -->
+    <div id="hiddenText">
+        <p style="margin: 90px; border: 5px solid transparent; padding: 20px;">
+    -
+    <br />
+    </p>
+
+        
+        </p>
+    </div>
+
+    <a href="../index.html">Go Back to Home</a>
+
+    <script>
+        const correctString = "swordfish"; // The correct string to trigger the reveal
+        const hiddenText = document.getElementById("hiddenText");
+        const responseMessage = document.getElementById("responseMessage");
+
+        function checkInput() {
+            const userInput = document.getElementById("inputBox").value;
+
+            if (userInput.toLowerCase() === correctString.toLowerCase()) {
+                hiddenText.style.display = "block"; // Reveal the hidden text
+                responseMessage.textContent = ""; // Clear any previous error messages
+            } else {
+                hiddenText.style.display = "none"; // Hide the text if input is incorrect
+                responseMessage.textContent = "Try again!"; // Show error message
+            }
+        }
+    </script>
 </body>
 </html>
